@@ -10,27 +10,37 @@
 </div>
 
 <div class="row all_large">
-    <div class="col-md-6">
+    <div class="col-md-6 mt-1">
         <materialize-card className="card-color all_large shadow-lg">
-            <div class="col-md-12 text-center">
-                <canvas #canvas width="500" height="500"></canvas>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <canvas #canvas width="500" height="500" id="plano"></canvas>
+                </div>
             </div>
-            <div class="col-md-1 offset-md-11">
-                <button class="btn btn-primary btn-block" (click)="spin()">&nbsp;&nbsp;Spin&nbsp;&nbsp;</button>
+
+            <div class="row mt-4">
+                <div class="col-md-1">
+                    <button class="btn btn-primary btn-block" (click)="spin()">&nbsp;&nbsp;Spin&nbsp;&nbsp;</button>
+                </div>
             </div>
+            
         </materialize-card>
     </div>
     
     
-    <div class="col-md-6">
+    <div class="col-md-6 mt-1">
         <materialize-card className="all_large shadow-lg">
 
             <div class="row">
-                <div class="col-md-11">
+                <div class="col-md-6  col-sm-6">
                     <materialize-input floatLabel="Add Something" [(ngModel)]="option" ></materialize-input>
                 </div>
-                <div class="col-md-1 mt-2">
-                    <button class="btn btn-success btn-block" (click) = "add()"> &nbsp;&nbsp;+&nbsp;&nbsp; </button>
+                <div class="col-md-1 col-sm-1">
+                    <button class="btn btn-success btn-block" (click) = "add()"> &nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp; </button>
+                </div>
+
+                <div class="col-md-1 offset-md-1 col-sm-1 offset-sm-1">
+                    <button class="btn btn-warning btn-block" (click)="clear()">&nbsp;&nbsp;Clear&nbsp;&nbsp;</button>
                 </div>
 
             </div>
@@ -41,10 +51,10 @@
                         <materialize-collapsible-title >
                             
                             <div class="row">
-                                <div class="col-md-11">
+                                <div class="col-md-9 col-sm-9">
                                     {{(i + 1)}} : {{  o }}
                                 </div>
-                                <div class="col-md-1 text-right">
+                                <div class="col-md-1 col-sm-1 text-right">
                                     <button class="btn btn-danger btn-block z" (click)="remove(i)">&nbsp;&nbsp;x&nbsp;&nbsp;</button>
                                 </div>
                             </div>
@@ -55,9 +65,6 @@
                 </div>
                 
                
-            </div>
-            <div class="col-md-1 offset-md-11 mt-4">
-                <button class="btn btn-warning btn-block" (click)="clear()">&nbsp;&nbsp;Clear&nbsp;&nbsp;</button>
             </div>
 
         </materialize-card>
