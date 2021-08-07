@@ -1,0 +1,69 @@
+
+
+<div class="row mt-5 mb-4 all_large">
+    <div class="col-md-12">
+        <materialize-card className="card-color all_large shadow-lg text-center">
+            <b class="fs-1 fw-bold">Roulette Online</b>
+        </materialize-card>
+
+    </div>
+</div>
+
+<div class="row all_large">
+    <div class="col-md-6">
+        <materialize-card className="card-color all_large shadow-lg">
+            <div class="col-md-12 text-center">
+                <canvas #canvas width="500" height="500"></canvas>
+            </div>
+            <div class="col-md-1 offset-md-11">
+                <button class="btn btn-primary btn-block" (click)="spin()">&nbsp;&nbsp;Spin&nbsp;&nbsp;</button>
+            </div>
+        </materialize-card>
+    </div>
+    
+    
+    <div class="col-md-6">
+        <materialize-card className="all_large shadow-lg">
+
+            <div class="row">
+                <div class="col-md-11">
+                    <materialize-input floatLabel="Add Something" [(ngModel)]="option" ></materialize-input>
+                </div>
+                <div class="col-md-1 mt-2">
+                    <button class="btn btn-success btn-block" (click) = "add()"> &nbsp;&nbsp;+&nbsp;&nbsp; </button>
+                </div>
+
+            </div>
+
+            <div class="row mt-3 vertical-scroll">
+                <div class="col-md-12" *ngFor="let o of options; let i = index">
+                    <materialize-collapsible [showIndicator]="false" [disabled]="true" className="shadow">
+                        <materialize-collapsible-title >
+                            
+                            <div class="row">
+                                <div class="col-md-11">
+                                    {{(i + 1)}} : {{  o }}
+                                </div>
+                                <div class="col-md-1 text-right">
+                                    <button class="btn btn-danger btn-block z" (click)="remove(i)">&nbsp;&nbsp;x&nbsp;&nbsp;</button>
+                                </div>
+                            </div>
+                            
+                        </materialize-collapsible-title>
+                          <!--<materialize-collapsible-content>Content</materialize-collapsible-content>-->
+                    </materialize-collapsible>
+                </div>
+                
+               
+            </div>
+            <div class="col-md-1 offset-md-11 mt-4">
+                <button class="btn btn-warning btn-block" (click)="clear()">&nbsp;&nbsp;Clear&nbsp;&nbsp;</button>
+            </div>
+
+        </materialize-card>
+    </div>
+
+</div>
+
+<!--<materialize-modal #myModal>{{message}}</materialize-modal>
+<materialize-button (onClick)="myModal.open()">Open modal</materialize-button>-->
